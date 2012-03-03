@@ -1,0 +1,1 @@
+qqq<?php echo $content; ?>

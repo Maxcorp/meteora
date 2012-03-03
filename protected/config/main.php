@@ -18,6 +18,8 @@ return array(
 		'application.models.*',
 		'application.components.*',
                 'application.modules.admin.*',
+                'application.modules.admin.components.*',
+                'application.modules.admin.controllers.DefaultController',
 	),
 
 	'modules'=>array(
@@ -39,6 +41,7 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+                        'loginUrl'=>array('/admin/login'),
 		),
 		// uncomment the following to enable URLs in path-format
 
@@ -48,6 +51,8 @@ return array(
                         'caseSensitive'=>false,
                         'urlSuffix' => '/',
 			'rules'=>array(
+                                'admin/login' => 'admin/default/login',
+                                
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
