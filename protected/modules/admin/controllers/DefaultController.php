@@ -9,7 +9,7 @@ class DefaultController extends AController
         
         public function actionLogin()
 	{
-		$this->render('LoginForm');
+		$this->render('login_page');
 	}
         
         public function test()
